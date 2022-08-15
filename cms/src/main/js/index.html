@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body {
+        padding: 20px;
+    }
+
+    button {
+        margin-top: 20px;
+        line-height: 60px;
+        font-weight: bold;
+        padding: 0 40px;
+        background: salmon;
+        border: none;
+    }
+
+    button:hover {
+        background: lightsalmon;
+    }
+</style>
+<!--<script src="C:\Users\SHBALABH\Downloads\jquery-2.1.1.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    function myFunction() {
+        const request = new XMLHttpRequest();
+        const url = "http://localhost:8080/cubicles";
+        request.open("GET", url, true);
+        //request.setRequestHeader("Access-Control-Allow-Origin", "http://localhost:8080");
+        request.send();
+        request.onreadystatechange = (e) => {
+            document.write(request.response);
+        }
+    }
+</script>
+<head>
+    <meta charset="UTF-8">
+    <title>CMS</title>
+    <h1>Cubicle allotment system</h1>
+    <button onclick="myFunction()">Book cubicle</button>
+</head>
+<body>
+
+</body>
+</html>
